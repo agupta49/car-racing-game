@@ -12,7 +12,6 @@ let keys = {
 let player = { speed: 10 };
 
 startScreen.addEventListener("click", start);
-
 document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
 
@@ -81,7 +80,6 @@ function gamePlay() {
     car.style.left = player.x + "px";
 
     window.requestAnimationFrame(gamePlay);
-    console.log(player.score++)
     player.score++;
     score.innerText = "Score: "+player.score;
   }
@@ -113,7 +111,6 @@ function moveEnemy(car) {
   let enemy = document.querySelectorAll(".enemy");
   enemy.forEach((item) => {
     if (isCollide(car, item)) {
-      console.log("Boooom....");
       endGame()
     }
     if (item.y >= 800) {
